@@ -1,0 +1,39 @@
+<router-outlet></router-outlet>
+<div id="container">
+  <a routerLink="/" routerLinkActive="router-link-active"><button class="btn btn-primary" type="Voltar">Voltar</button></a>
+  <h1 style="text-align: center; margin-top: 10%;">Editar Tarefa</h1>
+  <div class="container d-flex justify-content-center align-items-cente">
+    <form class="row g-3">
+      <div class="col-md-4">
+        <label class="form-label">Título:</label>
+        <input type="text" class="form-control" id="titulo" placeholder="Digite o Título" [(ngModel)]="tarefa.titulo" name="titulo">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Descrição:</label>
+        <textarea class="form-control" placeholder="Escreva a Descrição da tarefa" [(ngModel)]="tarefa.descricao" name="descricao"></textarea>
+      </div>
+      <div class="col-md-2">
+        <label class="form-label">Responsável:</label>
+        <input type="text" class="form-control" placeholder="Responsável" [(ngModel)]="tarefa.responsavel" name="responsavel">
+      </div>
+      <div class="col-md-2">
+        <label class="form-label">Prioridade:</label>
+        <select class="form-select form-select-sm" [(ngModel)]="tarefa.prioridade" name="prioridade">
+          <option value="Baixa">Baixa</option>
+          <option value="Média">Média</option>
+          <option value="Alta">Alta</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <div class="form-check">
+          <label class="form-label">Deadline:</label>
+          <br>
+          <input type="datetime-local" [(ngModel)]="tarefa.deadline" name="deadline">
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-success" type="button" (click)="editarTarefa()" routerLink="/" routerLinkActive="router-link-active">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>

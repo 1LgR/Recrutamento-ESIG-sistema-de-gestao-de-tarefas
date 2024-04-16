@@ -1,0 +1,24 @@
+<router-outlet></router-outlet>
+  <div id="container">
+    <a routerLink="/" routerLinkActive="router-link-active" ><button class="btn btn-primary" type="Voltar">Voltar</button></a>
+    <h1>Tarefas Criadas</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Titulo</th>
+          <th>Responsável</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td>{{ item.id }}</td>
+          <td>{{ item.titulo }}</td>
+          <td>{{ item.responsavel }}</td>
+          <td><a [routerLink]="'/editar/' + item.id" routerLinkActive="router-link-active">Editar</a> | <a href="#"  (click)="deleteTarefa(item.id)">Excluir</a> | <a href="#" (click)="deleteTarefa(item.id)">Concluir</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
