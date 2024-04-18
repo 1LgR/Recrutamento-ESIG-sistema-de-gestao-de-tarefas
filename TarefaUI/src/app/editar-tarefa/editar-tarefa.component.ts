@@ -29,7 +29,15 @@ export class EditarTarefaComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.taskId = +params['id'];
+      this.carregarTarefa(this.taskId);
     });
+  }
+
+  carregarTarefa(id: number) {
+    this.http.get(`http://localhost:8080/tarefa/listar/${id}`)
+      .subscribe((resp: any) => {
+        this.tarefa = resp;
+      });
   }
 
   editarTarefa() {

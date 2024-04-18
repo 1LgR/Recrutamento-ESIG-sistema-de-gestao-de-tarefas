@@ -50,6 +50,11 @@ public class TarefaController {
         String resposta = this.tarefaService.editarTarefa(id, body);
         return (resposta);
     }
+    @PutMapping("/concluir/{id}")
+    public String concluirTarefa(@PathVariable Long id) {
+        String resposta = this.tarefaService.concluirTarefa(id);
+        return (resposta);
+    }
     @DeleteMapping("/deletar/{id}")
      public String deletarTarefa(@PathVariable Long id) {
         String resposta = this.tarefaService.deletarTarefaPorId(id);

@@ -21,16 +21,18 @@ public class Tarefa {
     private String responsavel;
     private String prioridade;
     private LocalDateTime deadline;
+    private String status;
 
     public Tarefa() {
     }
 
-    public Tarefa(String titulo, String descricao, String responsavel, String prioridade, LocalDateTime deadline) {
+    public Tarefa(String titulo, String descricao, String responsavel, String prioridade, LocalDateTime deadline, String status) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.responsavel = responsavel;
         this.prioridade = prioridade;
         this.deadline = deadline;
+        this.status = status;
     }
 
     public String getTitulo() {
@@ -57,6 +59,10 @@ public class Tarefa {
         return id;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -75,6 +81,13 @@ public class Tarefa {
 
     public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
 

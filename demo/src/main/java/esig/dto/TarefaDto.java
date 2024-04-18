@@ -8,6 +8,7 @@ public class TarefaDto {
     private String responsavel;
     private String prioridade;
     private LocalDateTime deadline;
+    private String status;
 
     public String getTitulo() {
         return titulo;
@@ -29,6 +30,10 @@ public class TarefaDto {
         return deadline;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -47,6 +52,10 @@ public class TarefaDto {
 
     public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     
 }

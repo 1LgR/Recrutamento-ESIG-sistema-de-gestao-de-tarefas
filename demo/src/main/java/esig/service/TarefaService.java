@@ -16,7 +16,7 @@ public class TarefaService {
     @Autowired
     TarefaRepository tarefaRepository;
     public String criarTarefa(TarefaDto body) {
-        Tarefa tarefa = new Tarefa(body.getTitulo(), body.getDescricao(), body.getResponsavel(), body.getPrioridade(), body.getDeadline());
+        Tarefa tarefa = new Tarefa(body.getTitulo(), body.getDescricao(), body.getResponsavel(), body.getPrioridade(), body.getDeadline(), body.getStatus());
         this.tarefaRepository.save(tarefa);
         return ("Tarefa criada com sucesso!");
     }
@@ -33,6 +33,18 @@ public class TarefaService {
     public String deletarTarefaPorId(Long id) {
         this.tarefaRepository.deleteById(id);
         return "Tarefa deletada com sucesso!";
+    }
+
+    public String concluirTarefa(Long id) {
+        Tarefa tarefa = this.tarefaRepository.findById(id).get();
+        if (tarefa == null) {
+            return "Tarefa não encontrada!";
+        }
+
+        tarefa.setStatus("Concluída");
+
+        this.tarefaRepository.save(tarefa);
+        return "Tarefa concluída com sucesso!";
     }
 
     public String editarTarefa(Long id, TarefaDto body) {

@@ -17,6 +17,7 @@ export class CriarTarefaComponent implements OnInit {
     responsavel: '',
     prioridade: '',
     deadline: '',
+    status: 'pendente',
   };
 
   constructor(private http: HttpClient) {}
