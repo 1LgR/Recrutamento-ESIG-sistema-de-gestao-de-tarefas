@@ -58,4 +58,7 @@ public class TarefaDto {
         this.status = status;
     }
     
+    
 }
+
+

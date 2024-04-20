@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<div id="container">
+  <a routerLink="/listar" routerLinkActive="router-link-active"><button class="btn btn-primary" type="Voltar">Voltar</button></a>
+  <h1>Tarefa</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Titulo</th>
+        <th>Descrição</th>
+        <th>Responsável</th>
+        <th>Prioridade</th>
+        <th>Deadline</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ data?.id }}</td>
+        <td>{{ data?.titulo }}</td>
+        <td>{{ data?.descricao }}</td>
+        <td>{{ data?.responsavel }}</td>
+        <td>{{ data?.prioridade }}</td>
+        <td>{{ data?.deadline }}</td>
+        <td>{{ data?.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

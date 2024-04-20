@@ -23,6 +23,7 @@ public class Tarefa {
     private LocalDateTime deadline;
     private String status;
 
+
     public Tarefa() {
     }
 

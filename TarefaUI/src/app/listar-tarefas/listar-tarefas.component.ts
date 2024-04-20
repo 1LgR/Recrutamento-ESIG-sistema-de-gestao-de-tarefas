@@ -30,7 +30,6 @@ export class ListarTarefasComponent implements OnInit{
   public deleteTarefa(id: number) {
     this.http.delete(`http://localhost:8080/tarefa/deletar/${id}`)
       .subscribe(() => {
-        // Atualizar a lista de tarefas após a exclusão
         this.getTarefas();
       });
   }
@@ -38,10 +37,10 @@ export class ListarTarefasComponent implements OnInit{
   public concluirTarefa(id: number) {
     this.http.put(`http://localhost:8080/tarefa/concluir/${id}`, "Concluir")
       .subscribe(() => {
-        // Atualizar a lista de tarefas após a exclusão
         this.getTarefas();
       });
   }
+  
 
 }
 
