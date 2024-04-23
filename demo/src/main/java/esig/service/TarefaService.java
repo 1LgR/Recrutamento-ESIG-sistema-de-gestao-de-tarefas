@@ -26,6 +26,23 @@ public class TarefaService {
         return (tarefas);
     }
 
+    public List<Tarefa> buscarTarefasPorStatus(TarefaDto body) {
+        List<Tarefa> tarefas = this.tarefaRepository.findAll();
+        if (body.getStatus() != null) {
+            return tarefaRepository.findByStatus(body.getStatus());
+        }
+        if (body.getTitulo() != null) {
+            return tarefaRepository.findByTitulo(body.getTitulo());
+        }
+        if (body.getResponsavel() != null) {
+            return tarefaRepository.findByResponsavel(body.getResponsavel());
+        }
+        
+        else {
+            return (tarefas);
+        }
+    }
+
     public Tarefa obterTarefaPorId(Long id) {
         return tarefaRepository.findById(id).orElse(null);
     }

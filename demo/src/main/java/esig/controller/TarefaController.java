@@ -45,6 +45,10 @@ public class TarefaController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @PostMapping("/filtrar")
+    public List<Tarefa> buscarTarefasPorStatus(@RequestBody TarefaDto body) {
+        return tarefaService.buscarTarefasPorStatus(body);
+    }
     @PutMapping("/editar/{id}")
     public String editarTarefa(@PathVariable Long id, @RequestBody TarefaDto body) {
         String resposta = this.tarefaService.editarTarefa(id, body);
